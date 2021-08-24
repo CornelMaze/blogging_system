@@ -1,0 +1,107 @@
+npm install -g npm@7.19.1
+
+
+Blogging System with Node.Js and MySQL
+---------------------------------------
+This Blogging System has the following functionality. The users can signup, login, perform CRUD operations, Image Upload and Comment on other posts.
+Functionality wise we would perform: CRUD, DB Migrations, DB Seeds, Data Validation, Authentications(Token Based), Image Uploading and Relationships.
+We would use express and sequelize
+Database Tables:
+ => users
+  - id
+  - name
+  - email
+  - password
+
+ => posts
+  - id
+  - title
+  - content
+  - image_url
+  - categoryId
+  - userId
+
+ => categories
+  - id
+  - name
+
+=> comments
+ - id
+ - content
+ - postId
+ - userId
+
+Sequelize is the ORM (Object Relational Mapping) that we are using. With this we can run queries without writing SQL.
+
+To initialize sequelize we run:
+ => sequelize init
+
+To have sequelize-cli run:
+ => npm install -g sequelize-cli
+Sequelize would be installed globally on your cli.
+This command would create:
+ - config
+  => config.json
+ - migrations
+ - models
+  => index.js
+ - seeders
+
+To create a model using sequelize we write:
+ => sequelize model:generate --name ModelName --attributes tableFields:type, tableFields:type
+
+ => sequelize model:generate --name Post --attributes title:string,content:text,imageUrl:string,categoryId:integer,userId:integer
+
+To run our migrations we write:
+ => sequelize db:migrate
+
+For our Validation we would use fastest-validator:
+ => npm install fastest-validator
+
+For our Authentications we need bcryptjs jsonwebtoken
+ => npm install bcryptjs jsonwebtoken
+
+For our environment file we use dotenv
+ => npm i dotenv
+
+For Uploading images we use multer
+ => npm i multer
+
+
+npm install sequelize fastest-validator bcryptjs jsonwebtoken dotenv multer express
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
